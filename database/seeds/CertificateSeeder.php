@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class DatabaseSeeder extends Seeder
+class CertificateSeeder extends Seeder
 {
     /**
      * Seed the application's database.
@@ -11,7 +11,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(UserSeeder::class);
-        $this->call(CertificateSeeder::class);
+        factory(App\Certificate::class, 2)->create();
     }
 }
