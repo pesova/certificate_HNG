@@ -37,16 +37,20 @@ class HomeController extends Controller
             'track_id' => 'required',
         ]);
 
+        $pdata = $request->all();
+
         if ($request->has('email')) {
 
         } else {
-            // $this->downloadnow($data);
+            $this->downloadnow($pdata);
         }
     }
 
-    public function downloadnow($type,$hngId)
+    public function downloadnow($pdata)
     {
-
+        $data = ['title' => 'Welcome to ItSolutionStuff.com'];
+        $pdf = PDF::loadView('certificates.v1', $data);
+        return $pdf->download('v1.pdf');
     }
 
     public function sendToMail() {
