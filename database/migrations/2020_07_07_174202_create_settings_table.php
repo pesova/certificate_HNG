@@ -19,7 +19,7 @@ class CreateSettingsTable extends Migration
             $table->date('grad_date');
             $table->date('start_date');
             $table->string('cohort');
-            $table->string('certificate_type');
+            $table->string('certificate_type')->nullable();
             $table->timestamps();
         });
     }

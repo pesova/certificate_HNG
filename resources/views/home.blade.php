@@ -5,7 +5,8 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">{{ __('Dashboard') }}</div>
+                    <div class="card-header">{{ __('Dashboard') }} | <a href="/settings" class="btn btn-primary">Settings</a>
+                    </div>
 
                     <div class="card-body">
                         @if (session('success'))
@@ -46,7 +47,8 @@
                                                 downloads</a>
 
                                         @else
-                                            <a href="/enable/{{$certificate->id}}" class="btn btn-success">Enable downloads</a>
+                                            <a href="/enable/{{$certificate->id}}" class="btn btn-success">Enable
+                                                downloads</a>
 
                                         @endif
                                     </td>

@@ -22,4 +22,6 @@ Auth::routes();
 Route::get('/home', 'AdminController@index')->name('home');
 Route::get('/block/{id}', 'AdminController@block')->name('block');
 Route::get('/enable/{id}', 'AdminController@enable')->name('enable');
+Route::get('/settings', 'AdminController@settings')->name('settings.get');
+Route::post('/settings', 'AdminController@saveSettings')->name('settings.save');
 Route::get('generate-pdf', 'PDFController@generatePDF');
