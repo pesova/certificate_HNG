@@ -19,5 +19,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-Route::get('generate-pdf','PDFController@generatePDF');
+Route::get('/home', 'AdminController@index')->name('home');
+Route::get('/block/{id}', 'AdminController@block')->name('block');
+Route::get('/enable/{id}', 'AdminController@enable')->name('enable');
+Route::get('generate-pdf', 'PDFController@generatePDF');

@@ -19,6 +19,7 @@ class CreateCertificatesTable extends Migration
             $table->string('hngi_id')->unique();
             $table->string('first_name');
             $table->string('last_name');
+            $table->string('track');
             $table->string('total_downloads');
             $table->integer('downloadable')->default(1);
         });
