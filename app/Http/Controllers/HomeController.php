@@ -25,4 +25,13 @@ class HomeController extends Controller
     {
         return view('home');
     }
+
+    public function certificates()
+    {
+
+    }
+    public function download($type,$hngId)
+    {
+
+    }
 }
