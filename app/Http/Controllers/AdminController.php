@@ -44,6 +44,7 @@ class AdminController extends Controller
     public function settings()
     {
         $settings = Setting::first();
+        $settings = is_null($settings) ? new Setting() : $settings;
         return view('settings')->withSettings($settings);
     }
 

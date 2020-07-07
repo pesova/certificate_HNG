@@ -14,7 +14,7 @@ class PDFController extends Controller
     public function generatePDF()
     {
         $data = ['title' => 'Welcome to ItSolutionStuff.com'];
-        $pdf = PDF::loadView('certificates.v1', $data);
+        $pdf = PDF::loadView('certificates.v1', $data)->setPaper('a4', 'landscape');
         return $pdf->download('v1.pdf');
     }
 }
