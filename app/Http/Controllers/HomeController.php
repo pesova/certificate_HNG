@@ -33,10 +33,15 @@ class HomeController extends Controller
         $request->validate([
             'first_name' => 'required|min:2',
             'last_name' => 'required|min:2',
-            'last_name' => 'required|min:2',
-            'last_name' => 'required|min:2',
-            'last_name' => 'required|min:2',
+            'hngi_id' => 'required',
+            'track_id' => 'required',
         ]);
+
+        if ($request->has('email')) {
+
+        } else {
+            // $this->downloadnow($data);
+        }
     }
 
     public function downloadnow($type,$hngId)
