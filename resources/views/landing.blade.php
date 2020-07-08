@@ -2,23 +2,23 @@
 
 @section('content')
 
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <h2 class="card-header  bg-white text-center text-bold title">{{ __('HNGI CERTIFICATE MANAGER') }}</h2>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <h2 class="card-header  bg-white text-center text-bold title">{{ __('HNGI CERTIFICATE MANAGER') }}</h2>
 
-                @if ($errors->any())
-                    <div class="alert alert-danger">
-                        <ul>
-                            @foreach ($errors->all() as $error)
-                                <li>{{ $error }}</li>
-                            @endforeach
-                        </ul>
-                    </div>
-                @endif
+                    @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
 
-                <form action="{{ route('generate') }}" method="POST">
+                    <form action="{{ route('generate') }}" method="POST">
 
                         <div class="card-body">
                             @csrf
@@ -70,18 +70,8 @@
                                     </div>
                                 </div>
                                 <div class="form-group col-md-6">
-                                    <label for="exampleInputEmail1">Email address</label>
-                                    <input type="email" class="form-control" id="exampleInputEmail1"
-                                           aria-describedby="emailHelp" placeholder="Enter email" required>
-                                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with
-                                        anyone else.
-                                    </small>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="form-group col-md-6">
                                     <div class="form-group">
-                                        <label for="cohort">Certificate Type</label>
+                                        <label for="version">Certificate Type</label>
                                         <select class="form-control" name="version" id="version" required>
                                             <option value="1">type 1</option>
                                             <option value="2">type 2</option>
@@ -90,15 +80,32 @@
                                             <option value="5">type 5</option>
                                         </select>
                                     </div>
+
                                 </div>
-                                <div class="form-group col-md-6">
-                                    Image preview here?
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-md-12">
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Email address</label>
+                                        <input type="email" name="email" class="form-control" id="exampleInputEmail1"
+                                               aria-describedby="emailHelp" placeholder="Enter email" required>
+                                        <small id="emailHelp" class="form-text text-muted">We'll never share your email
+                                            with
+                                            anyone else.
+                                        </small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-md-12">
+                                    <div class="form-group">
+                                        <input type="checkbox" name="sendmail"> Send to my email
+                                    </div>
                                 </div>
                             </div>
                         </div>
                         <div class="card-footer text-center">
                             <input type="submit" class="btn btn-primary mr-3" name="Create" value="Create">
-                            <input type="submit" class="btn btn-warning ml-3" name="email" value="Send to mail">
                         </div>
                     </form>
                 </div>
