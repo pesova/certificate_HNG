@@ -143,6 +143,18 @@ header {
 	background-size: cover;
 	background-position: center;
 }
+#img4 {
+	background-image: url(../img/certificate1.png);
+	height: 20rem;
+	background-size: cover;
+	background-position: center;
+}
+#img5 {
+	background-image: url(../img/certificate3.png);
+	height: 20rem;
+	background-size: cover;
+	background-position: center;
+}
 .contain {
 	display: flex;
 	align-items: center;
