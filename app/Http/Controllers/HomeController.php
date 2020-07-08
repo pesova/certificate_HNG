@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Certificate;
+use App\Setting;
+use PDF;
+
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -13,7 +17,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('guest');
     }
 
     /**
@@ -23,15 +27,65 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        return view('landing');
     }
 
-    public function certificates()
+    public function generate(Request $request)
     {
+        // dd($request->all());
+        // $request->validate([
+        //     'first_name' => 'required|min:2',
+        //     'last_name' => 'required|min:2',
+        //     'hngi_id' => 'required',
+        //     'track' => 'required',
+        // ]);
+
+        $pdata = $request->all();
+        $data = [
+            'title' => 'Certificate of Completion',
+            'first_name'  => $pdata['first_name'] ,
+            'last_name' => $pdata['last_name'],
+            'track' => $pdata['track'],
+            'cohort' => $pdata['cohort'],
+            'hngi_id' => $pdata['hngi_id'],
+        ];
+
+        $date = date('d F, Y');
+        $settings = Setting::first();
+
+        $data['start_date'] = $settings->start;
+        $data['grad_date'] = $settings->start;
+        $data['issued'] = $date;
+
+        $this->save($data);
+
+        if ($request->has('email')) {
+            dd("comming soon");
+        } else {
+            return $this->downloadnow($data);
+        }
+    }
+
+    public function downloadnow($data)
+    {
+        $pdf = PDF::loadView('certificates.v1', $data)->setPaper('a4', 'landscape');
+        return $pdf->download('v1.pdf');
+    }
+
+    public function sendToMail() {
+
 
     }
-    public function download($type,$hngId)
-    {
 
+    public function save($data)
+    {
+        $Certificate = Certificate::where('hngi_id',$data['hngi_id'])->first();
+        $Certificate = is_null($Certificate) ? new Certificate() : $Certificate;
+        $Certificate->hngi_id = $data['hngi_id'];
+        $Certificate->first_name = $data['first_name'];
+        $Certificate->last_name = $data['last_name'];
+        $Certificate->track = $data['track'];
+        $Certificate->total_downloads += 1;
+      return  $Certificate->save();
     }
 }
