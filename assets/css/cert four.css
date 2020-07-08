@@ -162,3 +162,11 @@ body {
 .signature {
   width: 50%;
 }
+
+.signature p {
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 23px;
+  color: #979AA5;
+  margin-top: 5px;
+}
