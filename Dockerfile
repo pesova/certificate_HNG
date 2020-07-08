@@ -10,6 +10,7 @@ RUN apt-get install -y \
     sudo \
     nano \
     unzip \
+    libzip-dev \
     libicu-dev \
     libbz2-dev \
     libpng-dev \
