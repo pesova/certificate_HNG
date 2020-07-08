@@ -1,176 +1,141 @@
-@import url('https://fonts.googleapis.com/css2?family=Homemade+Apple&display=swap');
+/* general styles and text */
+
 body{
-    font-family:'Roboto', sans-serif;
-    background: #E5E5E5;;
+  background-color: #E5E5E5;
+  font-family: 'Roboto', sans-serif;
 }
 
-.container{
-    width: 1000px;
-    margin: auto;
-    display: flex;
-    height: 670px;
-}
-
-.bg{
-    position: absolute;
-}
-
-.bg1{
-    top: 11px;
-    left: 188px;
-}
-
-.bg2{
-    top: 61px;
-    left: 238px;
-}
-
-.bg3{
-    top: 75px;
-    left: 255px;
-}
-
-.bg4{
-    top: 83px;
-    left: 262px;
-}
-
-.certificate{
-    width: inherit;
-    background: #ffffff;
-    padding-left: 130px;
-    padding-right: 130px;
-    padding-top: 90px;
-}
-
-.header{
-    display: flex;
-    width: 100%;
-}
-
-.side-text{
-    font-size: 22px;
-    font-weight: 500;
-    color: #000000;
-    height: 60px;
-    line-height: 60px;
-    padding-left: 15px;
-    padding-right: 360px;
-}
-
-.side-img{
-    height: 35px;
-    padding-top: 12px;
-}
-
-.certificate p small{
-    text-align: right;
-    font-size: 10px;
-    color: #080808 !important;
-    font-weight: 300;
-    margin-left: auto;
-}
-
-.certificate h2{
-    font-size: 30px;
-    color: #4F4F4F;
-    margin-top: 0;
-}
-
-.certificate p{
-    font-weight: 500;
+h1{
+  font-family: Lovers Quarrel, cursive;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 80px;
+  margin-top: 0;
 }
 
 
-
-.name-line{
-    width: 500px;
+h2{
+  font-size: 36px;
+  color: #02204E;
 }
 
-.purpose{
-    color: #828282;
-    margin-bottom: 0;
+.name{
+  font-family: 'Roboto', sans-serif;
+  border-bottom: 2px solid #011430;
+  width: 80%;
+  text-align: center;
 }
 
-.certificate .bg-img2{
-    position: relative;
-    bottom: 320px;
-    width: 225px;
-    left: 550px;
+.presented{
+  font-family: Lovers Quarrel, cursive;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 32px;
+  margin-top: 0;
 }
 
-.user-info{
-    width: 100%;
-    text-align: center;
+.stack{
+  font-size: 32px;
 }
 
-.user-info h1{
-    font-size: 38px;
-    color: #02204E;
-    font-weight: 300;
-    margin-bottom: 0;
+h4{
+  font-family: 'Homemade Apple', cursive;
+  font-size: 16px;
+  color: #080808;
 }
 
-.user-info h2{
-    color: #02204E;;
-    font-size: 32px;
+.accomplishment-text{
+  font-family: 'Roboto', sans-serif;
 }
 
-.certified{
-    margin-top: 50px;
-    line-height: 0px;
-    font-family: 'Lovers Quarrel', cursive;;
+.ceo-name{
+  border-bottom: 1px solid #000000;
 }
 
-.certified h2{
-    font-size: 80px;
-    font-weight: 400;
+h6{
+  font-size: 14px;
+  color:  #8A8A8A;
 }
 
-.certified p{
-    font-size: 32px;
-    font-weight: 400;
+.signature p {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 8px;
+  color: #000000;
+  text-align: center;
 }
 
-.footer{
-    display: flex;
-    line-height: 10px;
+p{
+  font-size: 10px;
+  color: #808080;
 }
 
-.verify{
-    margin-top: 30px;
-    width: 300px;
-    margin-right: 260px;
+.creditations div p {
+  margin-bottom: 0;
 }
 
-.verify small{
-    font-size: 10px;
-    color: #808080;;
+.rectangle-text p{
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 36px;
+  color: #FFFFFF;
+  margin-top: 0;
+  margin-bottom: 0;
+  text-align: center;
 }
 
-.signature{
-    display: block;
-    text-align: right;
-    line-height: 0px;
-    margin-top: 30px;
+/* sections */
+
+.space {
+  background-color: #E5E5E5;
+  height: 30px;
+  width: 100%;
 }
 
-.sign-name{
-    font-family: 'Homemade Apple', cursive;
-    font-weight: 300 !important;
-    color: #080808 !important;
-    font-size: 20px !important;
+.certificate-container {
+  position: relative;
+  background: #ffffff url('../img/frame.svg') no-repeat center;
+  background-size: 100% 100%;
+  /* width: 65%; */
+  width: 1040px;
+  /* max-width: 80%; */
+  /* height: 98vh; */
+  margin: 0 auto; 
 }
 
-.signature .line{
-    border: .5px solid black;
-    width: 150px;
-    position: relative;
-    right: -10px;
-    bottom: 10px;
-
+.certificate-content{
+  width: 100%;
+  height: 100%;
+  padding: 12.6% 13%;
 }
 
-.signature small{
-    font-size: 8px;
+.first {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.second{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.third{
+  margin-top: 3%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.creditations{
+  font-family: 'Poppins', sans-serif;
+}
+
+
+
+/* img */
+.first img {
+  width: 25%;
 }
