@@ -88,10 +88,15 @@ class HomeController extends Controller
         return $Certificate->save();
     }
 
-    public function showCertificate($id)
+    public function showCertificate($view, $id)
     {
         $certificate = Certificate::where('hngi_id', '=', $id)->get()->first();
-
+        if (is_null($certificate)) {
+            return redirect('/');
+        }
+        if ($view == 'v') {
+            $certificate->downloadable = 0;
+        }
         return view('certificates.v' . $certificate->version)->withCertificate($certificate);
 
     }
