@@ -9,11 +9,11 @@
           integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
     <!-- Google fonts CDN -->
-    <link href="https://fonts.googleapis.com/css2?family=Homemade+Apple&family=Lovers+Quarrel&family=Poppins:wght@500&family=Roboto:wght@500&display=swap"
-          rel="stylesheet">
+    {{--<link href="https://fonts.googleapis.com/css2?family=Homemade+Apple&family=Lovers+Quarrel&family=Poppins:wght@500&family=Roboto:wght@500&display=swap"--}}
+          {{--rel="stylesheet">--}}
 
     <!-- custom css -->
-    <link rel="stylesheet" href="/css/cert one.css">
+    <link rel="stylesheet" href="{{ltrim(public_path('/css/cert one.css'))}}">
 
 
     <title>Certificate 3</title>
@@ -25,7 +25,7 @@
         <div class="space"></div>
         <div class="certificate-content">
             <div class="first">
-                <img src="/img/HNG-Logo-web.svg" alt="HNG Logo">
+                <img src="{{ltrim(public_path('/img/HNG-Logo-web.svg'))}}" alt="HNG Logo">
                 <h5>issued on the 16th of September 2020</h5>
             </div>
 
