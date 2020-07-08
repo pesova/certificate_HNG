@@ -9,8 +9,8 @@
           integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
     <!-- Google fonts CDN -->
-    {{--<link href="https://fonts.googleapis.com/css2?family=Homemade+Apple&family=Lovers+Quarrel&family=Poppins:wght@500&family=Roboto:wght@500&display=swap"--}}
-          {{--rel="stylesheet">--}}
+    <link href="https://fonts.googleapis.com/css2?family=Homemade+Apple&family=Lovers+Quarrel&family=Poppins:wght@500&family=Roboto:wght@500&display=swap"
+          rel="stylesheet">
 
     <!-- custom css -->
     <link rel="stylesheet" href="{{ltrim(public_path('/css/cert one.css'))}}">
