@@ -33,12 +33,12 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                  <label for="track_id">TRACK</label>
-                                  <select class="form-control" name="track_id" id="track_id" required>
-                                    <option value="1">Design</option>
-                                    <option value="2">Front End</option>
-                                    <option value="3">Back End</option>
-                                    <option value="4">Mobile</option>
+                                  <label for="">TRACK</label>
+                                  <select class="form-control" name="track" id="" required>
+                                    <option value="UI/UX Designer">Design</option>
+                                    <option value="Frontend Developer">Front End</option>
+                                    <option value="Frontend Developer">Back End</option>
+                                    <option value="Mod=bile Developer">Mobile</option>
                                   </select>
                                 </div>
                             </div>
@@ -46,8 +46,8 @@
                         <div class="row">
                         <div class="form-group col-md-6">
                                 <div class="form-group">
-                                  <label for="track_id">TRACK</label>
-                                  <select class="form-control" name="track_id" id="track_id" required>
+                                  <label for="cohort">cohort</label>
+                                  <select class="form-control" name="cohort" id="cohort" required>
                                     <option value="7.0">7.0</option>
                                     <option value="6.0">6.0</option>
                                     <option value="5.0">5.0</option>
