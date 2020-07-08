@@ -1,0 +1,254 @@
+* {
+	margin: 0;
+	padding: 0;
+	color: #fefefe;
+	font-family: 'Lato', sans-serif;
+}
+/* === HEADER  === */
+header {
+	height: 100vh;
+	background-image: url(../../resources/views/certificates/justice-league-certificates-master/assets/img/image.png);
+	background-size: cover;
+}
+.main-nav {
+	display: flex;
+	height: 87px;
+	justify-content: space-between;
+	padding: 20px 80px;
+	box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.04), 0px 2px 6px rgba(0, 0, 0, 0.04), 0px 16px 24px rgba(0, 0, 0, 0.06);
+	z-index: 2;
+}
+.logo {
+	font-weight: 800;
+	margin: auto 0;
+	font-size: 20px;
+}
+
+.navigation {
+	display: flex;
+	justify-content: space-between;
+}
+.link {
+	font-size: 17px;
+	text-decoration: none;
+	padding: 12px;
+	margin-left: 2.5rem;
+	color: #fefefe;
+	font-weight: 500;
+}
+.link:hover,
+.link:focus {
+	color: #ee242e;
+	transition: all 0.6s;
+	text-decoration: none;
+}
+.link.current {
+	color: #ee242e;
+	text-decoration: none;
+	font-weight: 600;
+}
+.link.current:hover,
+.link.current:active,
+.link.focus {
+	color: #ee242e;
+	text-decoration: none;
+}
+.search {
+	color: #ee242e;
+	margin: auto;
+	font-size: 30px;
+}
+.menu-btn {
+	margin: 0;
+	padding: 0;
+	display: none;
+	margin-left: 10px;
+	margin-top: auto;
+	margin-bottom: auto;
+	cursor: pointer;
+	z-index: 3;
+	background: transparent;
+}
+.btn-line {
+	width: 18px;
+	height: 2px;
+	margin: 0 0 5px 0;
+	background: rgb(255, 255, 255);
+	transition: all 0.6s;
+}
+
+/* ==== LANDING =====*/
+.landing {
+	height: 70vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+.landing-text {
+	font-size: 4rem;
+	font-weight: 600;
+}
+.icon {
+	color: #001325;
+	font-size: 5rem;
+}
+/* ====END OF LANDING STYLES =====*/
+.title {
+	color: #001325;
+	font-weight: 600;
+}
+#usage {
+	background-color: rgb(231, 233, 233);
+}
+.usage-card {
+	text-align: center;
+	padding: 20px 2rem;
+}
+.usage-card p,
+.usage-card h4 {
+	color: rgb(24, 24, 24);
+}
+/* ====EXPENDITURE STYLES =====*/
+
+/* ==== EXPENDITURE STYLES =====*/
+.expenditure {
+	padding: 20px 80px;
+}
+.expenditure-row {
+	padding-left: 0 !important;
+	padding-right: 0 !important;
+}
+.expenditure-card {
+	width: 100%;
+	padding: 2px;
+	background-color: #001325;
+	box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.04), 0px 2px 6px rgba(0, 0, 0, 0.04), 0px 10px 20px rgba(0, 0, 0, 0.04);
+}
+#img1 {
+	background-image: url(../../resources/views/certificates/justice-league-certificates-master/assets/img/certificate2.png);
+	height: 20rem;
+	background-size: cover;
+	background-position: center;
+}
+#img2 {
+	background-image: url(../../resources/views/certificates/justice-league-certificates-master/assets/img/certificate4.png);
+	height: 20rem;
+	background-size: cover;
+	background-position: center;
+}
+#img3 {
+	background-image: url(../../resources/views/certificates/justice-league-certificates-master/assets/img/certificate5.png);
+	height: 20rem;
+	background-size: cover;
+	background-position: center;
+}
+.contain {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 3rem;
+	background-color: #001325;
+}
+.preview {
+	color: #ffffff;
+	font-weight: 500;
+	transition: all 0.6s;
+}
+.preview:hover {
+	color: #cc2830;
+	font-weight: 600;
+	text-decoration: none;
+}
+.price-box {
+	background-color: #001325;
+}
+footer {
+	padding: 20px 80px;
+	background-color: #001325;
+	display: flex;
+	align-content: center;
+}
+
+@media screen and (max-width: 900px) {
+	.main-nav {
+		padding: 20px 40px;
+	}
+
+	.landing-text {
+		font-size: 2.5rem;
+	}
+	.icon {
+		color: #001325;
+		font-size: 3rem;
+	}
+	.menu-btn {
+		display: flex;
+		flex-direction: column;
+	}
+	.navigation {
+		color: white;
+		position: fixed;
+		display: grid;
+		grid-gap: 30px;
+		text-align: center;
+		justify-content: center;
+		align-content: center;
+		flex-direction: column;
+		width: 80vw;
+		right: 0;
+		top: 0;
+		height: 100vh;
+		transition: all 0.6s;
+		transform: translate3d(100%, 0, 0);
+		visibility: hidden;
+		background-color: #001325;
+		z-index: 1;
+	}
+	.link {
+		color: white;
+		margin: 0;
+	}
+	.navigation.show {
+		visibility: visible;
+		transform: translate3d(0, 0, 0);
+	}
+	.menu-btn.close {
+		transition: all 0.6s;
+	}
+	.menu-btn.close .btn-line:nth-child(1) {
+		transform: rotate(45deg) translateY(5px);
+		background-color: #ffffff;
+	}
+	.menu-btn.close .btn-line:nth-child(2) {
+		display: none;
+	}
+	.menu-btn.close .btn-line:nth-child(3) {
+		transform: rotate(-45deg) translateY(-5px);
+		background-color: #ffffff;
+	}
+	footer {
+		padding: 20px 40px;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.logo {
+		background: url(../img/Logo.png);
+	}
+	.landing-paragraph {
+		line-height: 2;
+		font-size: 15px;
+		width: 100%;
+	}
+	.selected-text {
+		font-size: 16px;
+		margin: 0px 50px;
+	}
+	.landing {
+		padding: 20px 50px;
+	}
+	.expenditure {
+		padding: 20px 50px;
+	}
+}

@@ -99,10 +99,7 @@ class HomeController extends Controller
     {
         $certificate = Certificate::where('hngi_id', '=', $id)->get()->first();
 
-        if ($certificate->downloadable == 1) {
-            return view('certificates.v' . $certificate->version)->withCertificate($certificate);
-        } else {
-            return redirect('/');
-        }
+        return view('certificates.v' . $certificate->version)->withCertificate($certificate);
+
     }
 }

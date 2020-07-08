@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Homemade+Apple&display=swap');
+
+body {
+  background-color: #eee;
+}
+
+.cert-box {
+  width: 1050px !important;
+  display: flex;
+  flex-direction: column;
+  margin: 1.5vh 10%;
+  background-color: #fff;
+  /* width: 100%; */
+  height: 97vh;
+  position: relative;
+}
+
+.top-image {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 3%;
+}
+
+.top-image img {
+  width: 30rem;
+}
+
+.text-box {
+  margin-left: 12%;
+  margin-top: 30px;
+}
+
+.cert-complete {
+  font-weight: 500;
+  line-height: 41px;
+  text-transform: uppercase;
+}
+
+.cert-complete h2 {
+  font-size: 30px;
+}
+
+.awarded {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 41px;
+  color: #828282;
+  margin-top: 1.5rem;
+}
+
+.awarded p {
+  font-size: 18px;
+}
+
+.name {
+  font-style: normal;
+  font-weight: 500;
+  line-height: 41px;
+  margin-top: 1.3rem;
+  margin-left: 0;
+}
+
+.name p {
+  font-size: 27px;
+}
+
+.completed {
+  font-weight: 500;
+  line-height: 41px;
+  color: #828282;
+  font-size: 18px;
+}
+
+.track h2 {
+  font-style: normal;
+  font-weight: 500;
+  line-height: 41px;
+  text-transform: uppercase;
+  color: #333333;
+  font-size: 50px;
+}
+
+.remarks p {
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1.2;
+  text-transform: capitalize;
+  color: #4F4F4F;
+  font-size: 20px;
+  margin-top: 2rem;
+}
+
+.signature-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.signed {
+  margin-top: 40px;
+}
+
+.signed p {
+  font-size: 16px;
+  line-height: 41px;
+  text-align: center;
+  color: #080808;
+  font-family: 'Homemade Apple', cursive;
+}
+
+.signed .line {
+  height: 1px;
+  width: 140px;
+  background-color: #080808;
+  position: relative;
+  top: -27px;
+}
+
+.signed-position p {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 8px;
+  line-height: 41px;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  position: relative;
+  top: -30px;
+}
+
+.bottom-img {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}

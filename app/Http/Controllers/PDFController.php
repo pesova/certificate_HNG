@@ -21,10 +21,12 @@ class PDFController extends Controller
         // dd($data->version);
         $date = date('d F, Y');
         $settings = Setting::first();
-
+        $data->total_downloads += 1;
+        $data->save();
         $data->start_date = $settings->start;
         $data->grad_date = $settings->start;
         $data->issued = $date;
+
         //dd($data->version);
         //dd($data->version);
         $data = ['certificate' => $data];
