@@ -43,6 +43,7 @@
                 <div class="col">
                     <div class="sign sign-one">
                         <div class="signature">
+                            <p class="date-issued">15th july 2020</p>
                             <div class="sign-line"></div>
                             <p>Date Issued</p>
                         </div>
@@ -51,6 +52,7 @@
                 <div class="col">
                     <div class="sign sign-two">
                         <div class="signature">
+                            <p class="signer">Seyi Onifade</p>
                             <div class="sign-line"></div>
                             <p>CEO, HNG Internship</p>
                         </div>
@@ -70,5 +72,10 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<script>
+  let today = new Date()
+  date = today.toDateString()
+  document.querySelector('.date-issued').textContent = date;
+</script>
 </body>
 </html>
