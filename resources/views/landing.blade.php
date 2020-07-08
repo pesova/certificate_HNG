@@ -7,7 +7,18 @@
         <div class="col-md-8">
             <div class="card">
                 <h2 class="card-header  bg-white text-center text-bold title">{{ __('HNGI CERTIFICATE MANAGER') }}</h2>
-                    <form action="{{ route('generate') }}" method="POST">
+
+                @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+
+                <form action="{{ route('generate') }}" method="POST">
                         <div class="card-body">
                         @csrf
                         <div class="row">

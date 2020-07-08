@@ -33,12 +33,12 @@ class HomeController extends Controller
     public function generate(Request $request)
     {
         // dd($request->all());
-        // $request->validate([
-        //     'first_name' => 'required|min:2',
-        //     'last_name' => 'required|min:2',
-        //     'hngi_id' => 'required',
-        //     'track' => 'required',
-        // ]);
+        $request->validate([
+            'first_name' => 'required|min:2',
+            'last_name' => 'required|min:2',
+            'hngi_id' => 'required',
+            'track' => 'required',
+        ]);
 
         $pdata = $request->all();
         $data = [
@@ -53,8 +53,8 @@ class HomeController extends Controller
         $date = date('d F, Y');
         $settings = Setting::first();
 
-        $data['start_date'] = $settings->start;
-        $data['grad_date'] = $settings->start;
+        $data['start_date'] = $settings->start_date;
+        $data['grad_date'] = $settings->grad_date;
         $data['issued'] = $date;
 
         $this->save($data);
