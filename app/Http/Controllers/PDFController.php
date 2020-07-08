@@ -30,7 +30,7 @@ class PDFController extends Controller
         //dd($data->version);
         //dd($data->version);
         $data = ['certificate' => $data];
-        $pdf = PDF::loadView('certificates.v' . $data['certificate']->version, $data)->setPaper('a4', 'landscape');
+        $pdf = PDF::loadView('pdfcertificates.v' . $data['certificate']->version, $data)->setPaper('a4', 'landscape');
         return $pdf->download('v1.pdf');
     }
 }
