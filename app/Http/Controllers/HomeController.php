@@ -43,11 +43,12 @@ class HomeController extends Controller
         $pdata = $request->all();
         $data = [
             'title' => 'Certificate of Completion',
-            'first_name'  => $pdata['first_name'] ,
+            'first_name' => $pdata['first_name'],
             'last_name' => $pdata['last_name'],
             'track' => $pdata['track'],
             'cohort' => $pdata['cohort'],
             'hngi_id' => $pdata['hngi_id'],
+            'version' => $pdata['version'],
         ];
 
         $date = date('d F, Y');
@@ -61,9 +62,12 @@ class HomeController extends Controller
 
         if ($request->has('email')) {
             dd("comming soon");
-        } else {
-            return $this->downloadnow($data);
         }
+
+        return redirect('/certificates/' . $pdata['hngi_id']);
+
+        //    return $this->downloadnow($data);
+
     }
 
     public function downloadnow($data)
@@ -72,20 +76,33 @@ class HomeController extends Controller
         return $pdf->download('v1.pdf');
     }
 
-    public function sendToMail() {
+    public function sendToMail()
+    {
 
 
     }
 
     public function save($data)
     {
-        $Certificate = Certificate::where('hngi_id',$data['hngi_id'])->first();
+        $Certificate = Certificate::where('hngi_id', $data['hngi_id'])->first();
         $Certificate = is_null($Certificate) ? new Certificate() : $Certificate;
         $Certificate->hngi_id = $data['hngi_id'];
         $Certificate->first_name = $data['first_name'];
         $Certificate->last_name = $data['last_name'];
         $Certificate->track = $data['track'];
+        $Certificate->version = $data['version'];
         $Certificate->total_downloads += 1;
-      return  $Certificate->save();
+        return $Certificate->save();
+    }
+
+    public function showCertificate($id)
+    {
+        $certificate = Certificate::where('hngi_id', '=', $id)->get()->first();
+
+        if ($certificate->downloadable == 1) {
+            return view('certificates.v' . $certificate->version)->withCertificate($certificate);
+        } else {
+            return redirect('/');
+        }
     }
 }
