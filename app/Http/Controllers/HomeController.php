@@ -102,4 +102,14 @@ class HomeController extends Controller
         return view('certificates.v' . $certificate->version)->withCertificate($certificate);
 
     }
+
+    public function seed()
+    {
+        $settings =  new Setting();
+        $settings->founder = 'Xyluz';
+        $settings->grad_date = date('Y-m-d');
+        $settings->start_date = date('Y-m-d');
+        $settings->cohort = '7.0';
+        $settings->save();
+    }
 }

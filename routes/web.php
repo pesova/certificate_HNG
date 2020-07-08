@@ -25,3 +25,7 @@ Route::get('/settings', 'AdminController@settings')->name('settings.get');
 Route::post('/settings', 'AdminController@saveSettings')->name('settings.save');
 Route::post('generate-pdf', 'PDFController@generatePDF');
 Route::get('/certificates/{id}', 'HomeController@showCertificate');
+
+
+/// dummy seed settings incase faker fails
+Route::post('/seed', 'HomeController@seed');
