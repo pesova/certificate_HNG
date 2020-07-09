@@ -57,6 +57,7 @@
 
                             </tbody>
                         </table>
+                        {{$certificates->links()}}
                     </div>
                 </div>
             </div>
