@@ -47,7 +47,7 @@ class CertificateCreated extends Mailable
             'media' => 'screen',
             'landscape' => true
         ]);
-        $nameofpdf = $this->certificate->hngi_id;
+        $nameofpdf = $this->certificate->hngi_id . '.pdf';
         if ($response->successful()) {
             $data = $response->json();
             return $this->from('admin@hng.local')->view('mails.certificate')->with([
