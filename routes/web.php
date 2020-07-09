@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'HomeController@index')->name('landing');
 Route::post('/', 'HomeController@generate')->name('generate');
-Auth::routes();
+Auth::routes(['register' => false]);
 
 Route::get('/home', 'AdminController@index')->name('home');
 Route::get('/block/{id}', 'AdminController@block')->name('block');
