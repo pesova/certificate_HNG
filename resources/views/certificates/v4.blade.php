@@ -47,6 +47,9 @@
                             <div class="sign-line"></div>
                             <p>Date Issued</p>
                         </div>
+                        <small>
+                            Verify at <a href="{{ url('certificates/' . $certificate->hngi_id) }}">{{ url('certificates/' . $certificate->hngi_id) }}</a>
+                        </small>
                     </div>
                 </div>
                 <div class="col">

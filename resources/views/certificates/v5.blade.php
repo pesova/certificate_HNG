@@ -26,6 +26,9 @@
             <p>For completing HNG i7 as a</p>
             <h2>{{$certificate->track}}</h2>
             <p class="date">The internship lasted from 18th July through to 20th September 2020</p>
+            <small>
+                Verify at <a href="{{ url('certificates/' . $certificate->hngi_id) }}">{{ url('certificates/' . $certificate->hngi_id) }}</a>
+            </small>
         </div>
 
         <div class="signature">

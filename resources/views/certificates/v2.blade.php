@@ -40,6 +40,9 @@
                         <p>
                             he has proven to be deligent, resourceful and a <br> team player other accomplishements he
                             made on <br> the internship
+                            <small>
+                                Verify at <a href="{{ url('certificates/' . $certificate->hngi_id) }}">{{ url('certificates/' . $certificate->hngi_id) }}</a>
+                            </small>
                         </p>
                     </div>
                 </div>
