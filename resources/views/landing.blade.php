@@ -79,11 +79,11 @@
                                         <label for="version">Certificate Type</label>
                                         <select class="form-control" name="version" id="version" required>
                                             <option value="{{$type}}" selected>type {{$type}}</option>
-                                            <option value="1">type 1</option>
-                                            <option value="2">type 2</option>
-                                            <option value="3">type 3</option>
-                                            <option value="4">type 4</option>
-                                            <option value="5">type 5</option>
+                                            <option value="1">Certificate 1</option>
+                                            <option value="2">Certificate 2</option>
+                                            <option value="3">Certificate 3</option>
+                                            <option value="4">Certificate 4</option>
+                                            <option value="5">Certificate 5</option>
                                         </select>
                                     </div>
 
