@@ -19,11 +19,8 @@
         <div class="main-nav">
             <div class="logo">JL-<span class="text-danger">Certify</span></div>
             <div class="navigation">
-                <a href="#" class="link current">Home</a>
-                <a href="#" class="link">Usage</a>
+                <a href="/" class="link current">Home</a>
                 <a href="#certs" class="link">Certificates</a>
-                <a href="#" class="link">Pricing</a>
-                <a href="#" class="link"><i class='bx bx-search-alt-2 search' ></i></a>
             </div>
             <div class="menu-btn">
                 <div class="btn-line"></div>
@@ -31,7 +28,7 @@
                 <div class="btn-line"></div>
             </div>
         </div>
-        
+
         <div class="landing my-5">
             <h1 class="landing-text text-center">THE BEST <span class="text-danger">CERTIFICATES</span></h1>
             <h4>ALL LAID OUT</h4>
@@ -75,9 +72,9 @@
             </div>
         </div>
     </div>
-    
+
     <!-- END OF LANDING -->
-        
+
 
     <!-- Expenditure Section -->
     <section class="expenditure" id="certs">
@@ -88,7 +85,7 @@
                 <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 mt-5">
                     <div class="expenditure-card">
                         <div class="certificate" id="img1">
-                            
+
 
                         </div>
                         <div class="contain">
@@ -118,7 +115,7 @@
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 mt-5">
                     <div class="expenditure-card">
                         <div class="certificate" id="img4">
-                            
+
 
                         </div>
                         <div class="contain">
@@ -129,7 +126,7 @@
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 mt-5">
                     <div class="expenditure-card">
                         <div class="certificate" id="img5">
-                            
+
 
                         </div>
                         <div class="contain">
@@ -140,7 +137,7 @@
                 <!-- <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 mt-5">
                     <div class="expenditure-card">
                         <div class="certificate" id="img1">
-                            
+
 
                         </div>
                         <div class="contain">
@@ -151,7 +148,7 @@
                 <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 mt-5">
                     <div class="expenditure-card">
                         <div class="certificate" id="img1">
-                            
+
 
                         </div>
                         <div class="contain">
@@ -162,18 +159,18 @@
                 <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 mt-5">
                     <div class="expenditure-card">
                         <div class="certificate" id="img1">
-                            
+
 
                         </div>
                         <div class="contain">
                             <a href="#" class="preview">Preview</a>
                         </div>
                     </div>
-                </div> 
+                </div>
                 <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 mt-5">
                     <div class="expenditure-card">
                         <div class="certificate" id="img1">
-                            
+
 
                         </div>
                         <div class="contain">
@@ -181,8 +178,8 @@
                         </div>
                     </div>
                 </div> -->
-                
-                
+
+
             </div>
         </div>
 
@@ -190,7 +187,7 @@
 
     <!-- <section class="container-fluid my-5" id="pricing">
         <h4 class="title text-center ">Pricing</h4>
-        
+
     </section> -->
     <footer>
         <div>made by Team <span class="text-danger">Justice-League</span></div>
@@ -248,7 +245,7 @@
             </div>
         </div>
     </div>
-    
+
 
 
 <script src="/js/index.js"></script>
