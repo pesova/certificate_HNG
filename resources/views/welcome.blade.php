@@ -21,6 +21,7 @@
             <div class="navigation">
                 <a href="/" class="link current">Home</a>
                 <a href="#certs" class="link">Certificates</a>
+                <a href="{{route('login')}}" class="link">Login</a>
             </div>
             <div class="menu-btn">
                 <div class="btn-line"></div>
