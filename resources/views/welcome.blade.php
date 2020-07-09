@@ -32,6 +32,9 @@
         <div class="landing my-5">
             <h1 class="landing-text text-center">THE BEST <span class="text-danger">CERTIFICATES</span></h1>
             <h4>ALL LAID OUT</h4>
+            <br>
+            <br>
+        <a class="btn btn-success"  href="{{ route('landing') }}"> Request Certificate Now</a>
         </div>
     </header>
 
