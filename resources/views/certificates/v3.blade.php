@@ -26,13 +26,15 @@
 
                 <!-- left-side of certificate -->
                 <div class="left">
-                    <h4 class="first">issued on 18/03/2020</h4>
+                    <h4 class="first">issued on <span class="my-date">18/03/2020</span></h4>
                     <h2 class="second">{{$certificate->first_name}} {{$certificate->last_name}}</h2>
                     <h4 class="third">has succesfully completed the 8th Edition of</h4>
                     <img src="/img/HNG Logo.svg" alt="HNG logo" class="logo">
-
-                    <hr/>
-                    <h6 class="fourth">CEO</h6>
+                    <div class="sign">
+                      <p class="sign">Seyi Onifade</p>
+                      <hr/>
+                      <h6 class="fourth">CEO</h6>
+                    </div>
                 </div>
 
                 <!-- right-side of certificate -->
@@ -82,6 +84,14 @@
         </form>
     @endif
 </div>
-
+<script>
+  let today = new Date()
+  date = today.toISOString().slice(0, 10)
+  let splitString = date.split("-")
+  console.log(splitString)
+  let reverseArray = splitString.reverse();
+  var joinArray = reverseArray.join("/")
+  document.querySelector('.my-date').textContent = joinArray;
+</script>
 </body>
 </html>

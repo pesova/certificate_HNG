@@ -18,9 +18,7 @@
         <div class="bg-img"><img src="/img/Vector.png"></div>
     </div>
     <div class="certificate">
-        <p>
-            <small> Issued on the 16th of September 2020</small>
-        </p>
+        <p><small> Issued on <span class="my-date">the 16th of September 2020</span></small></p>
         <div class="user-info">
             <h2>Certificate Of Completion</h2>
             <p>Awarded to</p>
@@ -45,5 +43,11 @@
         <button class="btn btn-success">Download</button>
     </form>
 @endif
+
+<script>
+  let today = new Date()
+  date = today.toDateString()
+  document.querySelector('.my-date').textContent = date;
+</script>
 </body>
 </html>

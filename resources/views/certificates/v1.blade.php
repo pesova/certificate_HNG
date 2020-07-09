@@ -26,7 +26,7 @@
         <div class="certificate-content">
             <div class="first">
                 <img src="/img/HNG-Logo-web.svg" alt="HNG Logo">
-                <h5>issued on the 16th of September 2020</h5>
+                <h5>issued on <span class="my-date">the 16th of September 2020</span></h5>
             </div>
 
             <div class="second">
@@ -66,5 +66,10 @@
     @endif
 </div>
 
+<script>
+  let today = new Date()
+  date = today.toDateString()
+  document.querySelector('.my-date').textContent = date;
+</script>
 </body>
 </html>

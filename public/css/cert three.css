@@ -89,6 +89,22 @@ p{
   justify-content: left;
 }
 
+.sign {
+  display: flex;
+  flex-direction: column;
+}
+
+.sign p {
+  width: 50%;
+  text-align: center;
+  margin-top: 20%;
+  margin-bottom: 0em;
+  position: relative;
+  bottom: -10px;
+  font-size: 15px;
+  font-family: 'Homemade Apple', cursive;
+}
+
 hr {
   border: 0;
   clear:both;
