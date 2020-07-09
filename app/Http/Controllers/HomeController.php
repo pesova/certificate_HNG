@@ -44,9 +44,9 @@ class HomeController extends Controller
         $request->validate([
             'first_name' => 'required|min:2',
             'last_name' => 'required|min:2',
-            'hngi_id' => 'required',
+            'hngi_id' => 'required|min:5|max:5',
             'track' => 'required',
-            'email' => 'required',
+            'email' => 'required|email',
         ]);
 
         $Certificate = Certificate::where('hngi_id', $request->input('hngi_id'))->first();
