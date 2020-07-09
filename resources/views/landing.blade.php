@@ -2,23 +2,28 @@
 
 @section('content')
 
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <h2 class="card-header  bg-white text-center text-bold title">{{ __('HNGI CERTIFICATE MANAGER') }}</h2>
+    <div class="container">
+        <div class="row justify-content-center">
 
-                @if ($errors->any())
-                    <div class="alert alert-danger">
-                        <ul>
-                            @foreach ($errors->all() as $error)
-                                <li>{{ $error }}</li>
-                            @endforeach
-                        </ul>
-                    </div>
-                @endif
+            <div class="col-md-8">
+                <div class="card">
+                    <h2 class="card-header  bg-white text-center text-bold title">{{ __('HNGI CERTIFICATE MANAGER') }}</h2>
 
-                <form action="{{ route('generate') }}" method="POST">
+                    @if(Session::has('message'))
+                        <p class="alert alert-success">{{ Session::get('message') }}</p>
+                    @endif
+
+                    @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+
+                    <form action="{{ route('generate') }}" method="POST">
 
                         <div class="card-body">
                             @csrf
@@ -52,8 +57,8 @@
                                         <select class="form-control" name="track" id="" required>
                                             <option value="UI/UX Designer">Design</option>
                                             <option value="Frontend Developer">Front End</option>
-                                            <option value="Frontend Developer">Back End</option>
-                                            <option value="Mod=bile Developer">Mobile</option>
+                                            <option value="Backend Developer">Back End</option>
+                                            <option value="Mobile Developer">Mobile</option>
                                         </select>
                                     </div>
                                 </div>
@@ -70,19 +75,10 @@
                                     </div>
                                 </div>
                                 <div class="form-group col-md-6">
-                                    <label for="exampleInputEmail1">Email address</label>
-                                    <input type="email" class="form-control" id="exampleInputEmail1"
-                                           aria-describedby="emailHelp" placeholder="Enter email" required>
-                                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with
-                                        anyone else.
-                                    </small>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="form-group col-md-6">
                                     <div class="form-group">
-                                        <label for="cohort">Certificate Type</label>
+                                        <label for="version">Certificate Type</label>
                                         <select class="form-control" name="version" id="version" required>
+                                            <option value="{{$type}}" selected>type {{$type}}</option>
                                             <option value="1">type 1</option>
                                             <option value="2">type 2</option>
                                             <option value="3">type 3</option>
@@ -90,15 +86,32 @@
                                             <option value="5">type 5</option>
                                         </select>
                                     </div>
+
                                 </div>
-                                <div class="form-group col-md-6">
-                                    Image preview here?
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-md-12">
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Email address</label>
+                                        <input type="email" name="email" class="form-control" id="exampleInputEmail1"
+                                               aria-describedby="emailHelp" placeholder="Enter email" required>
+                                        <small id="emailHelp" class="form-text text-muted">We'll never share your email
+                                            with
+                                            anyone else.
+                                        </small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-md-12">
+                                    <div class="form-group">
+                                        <input type="checkbox" name="sendmail" checked="checked"> Send to my email
+                                    </div>
                                 </div>
                             </div>
                         </div>
                         <div class="card-footer text-center">
                             <input type="submit" class="btn btn-primary mr-3" name="Create" value="Create">
-                            <input type="submit" class="btn btn-warning ml-3" name="email" value="Send to mail">
                         </div>
                     </form>
                 </div>

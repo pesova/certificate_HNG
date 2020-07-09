@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Certificate;
+use App\Mail\CertificateCreated;
 use App\Setting;
 use PDF;
-
+// use App\Mail;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -25,9 +27,15 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
+    public function index(Request $req)
     {
-        return view('landing');
+        $req->session()->flash('message', 'You have selected certificate of type ' . $req->input('type'));
+        return view('landing')->with('type', $req->input('type'));
+    }
+
+    public function welcome()
+    {
+        return view('welcome');
     }
 
     public function generate(Request $request)
@@ -38,33 +46,24 @@ class HomeController extends Controller
             'last_name' => 'required|min:2',
             'hngi_id' => 'required',
             'track' => 'required',
+            'email' => 'required',
         ]);
 
-        $pdata = $request->all();
-        $data = [
-            'title' => 'Certificate of Completion',
-            'first_name' => $pdata['first_name'],
-            'last_name' => $pdata['last_name'],
-            'track' => $pdata['track'],
-            'cohort' => $pdata['cohort'],
-            'hngi_id' => $pdata['hngi_id'],
-            'version' => $pdata['version'],
-        ];
+        $Certificate = Certificate::where('hngi_id', $request->input('hngi_id'))->first();
+        $Certificate = is_null($Certificate) ? new Certificate() : $Certificate;
+        $Certificate->hngi_id = $request->input('hngi_id');
+        $Certificate->first_name = $request->input('first_name');
+        $Certificate->last_name = $request->input('last_name');
+        $Certificate->track = $request->input('track');
+        $Certificate->version = $request->input('version');
+        $Certificate->total_downloads += 1;
+        $Certificate->save($request->all());
 
-        $date = date('d F, Y');
-        $settings = Setting::first();
-
-        $data['start_date'] = $settings->start_date;
-        $data['grad_date'] = $settings->grad_date;
-        $data['issued'] = $date;
-
-        $this->save($data);
-
-        if ($request->has('email')) {
-            dd("comming soon");
+        if ($request->input('sendmail') == 'on') {
+            Mail::to($request->input('email'))->send(new CertificateCreated($Certificate));
         }
 
-        return redirect('/certificates/' . $pdata['hngi_id']);
+        return redirect('/certificates/' . $request->input('hngi_id'));
 
         //    return $this->downloadnow($data);
 
@@ -95,17 +94,22 @@ class HomeController extends Controller
         return $Certificate->save();
     }
 
-    public function showCertificate($id)
+    public function showCertificate($view, $id)
     {
         $certificate = Certificate::where('hngi_id', '=', $id)->get()->first();
-
+        if (is_null($certificate)) {
+            return redirect('/');
+        }
+        if ($view == 'v') {
+            $certificate->downloadable = 0;
+        }
         return view('certificates.v' . $certificate->version)->withCertificate($certificate);
 
     }
 
     public function seed()
     {
-        $settings =  new Setting();
+        $settings = new Setting();
         $settings->founder = 'Xyluz';
         $settings->grad_date = date('Y-m-d');
         $settings->start_date = date('Y-m-d');
