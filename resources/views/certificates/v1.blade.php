@@ -26,7 +26,7 @@
         <div class="certificate-content">
             <div class="first">
                 <img src="/img/HNG-Logo-web.svg" alt="HNG Logo">
-                <h5>issued on <span class="my-date">the 16th of September 2020</span></h5>
+                <h5>issued on the 16th of September 2020</h5>
             </div>
 
             <div class="second">
@@ -40,7 +40,7 @@
             <div class="third">
                 <div class="creditations">
                     <h6>
-                        Verify at <a href="#">hng.com/certificates/{{$certificate->hngi_id}}</a>
+                        Verify at <a href{{ url('certificates/' . $certificate->hngi_id) }}">{{ url('certificates/' . $certificate->hngi_id) }}</a>
                     </h6>
                     <div>
                         <p>Hotels.ng Internship has verified that this individual has completed</p>
@@ -66,10 +66,5 @@
     @endif
 </div>
 
-<script>
-  let today = new Date()
-  date = today.toDateString()
-  document.querySelector('.my-date').textContent = date;
-</script>
 </body>
 </html>
