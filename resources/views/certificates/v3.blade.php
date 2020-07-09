@@ -65,7 +65,7 @@
 
                     <div class="creditations">
                         <h6>
-                            Verify at <a href="#">hng.com/certificates/{{$certificate->hngi_id}}</a>
+                            Verify at <a href="{{ url('certificates/' . $certificate->hngi_id) }}">{{ url('certificates/' . $certificate->hngi_id) }}</a>
                         </h6>
                         <div>
                             <p>Hotels.ng Internship has verified that this individual has completed</p>
