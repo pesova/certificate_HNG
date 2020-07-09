@@ -83,37 +83,41 @@
         <div class="container-fluid expenditure-row">
             <div class="row">
                 <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 mt-5">
-                    <div class="expenditure-card">
-                        <div class="certificate" id="img1">
-
-
-                        </div>
+                    <a href="#" class="preview" data-toggle="modal" data-target="#cert1">
+                        <div class="expenditure-card">
+                        <div class="certificate" id="img1"></div>
                         <div class="contain">
                             <a href="#" class="preview" data-toggle="modal" data-target="#cert1">Preview</a>
                         </div>
                     </div>
+                    </a>
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 mt-5">
-                    <div class="expenditure-card">
+                    <a href="#" data-toggle="modal" data-target="#cert2" class="preview">
+                        <div class="expenditure-card">
                         <div class="certificate" id="img2">
                         </div>
                         <div class="contain">
                             <a href="#" data-toggle="modal" data-target="#cert2" class="preview">Preview</a>
                         </div>
                     </div>
+                    </a>
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 mt-5">
-                    <div class="expenditure-card">
+                    <a href="#" data-toggle="modal" data-target="#cert3" class="preview">
+                        <div class="expenditure-card">
                         <div class="certificate" id="img3">
                         </div>
                         <div class="contain">
                             <a href="#" data-toggle="modal" data-target="#cert3" class="preview">Preview</a>
                         </div>
                     </div>
+                    </a>
                 </div>
 
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 mt-5">
-                    <div class="expenditure-card">
+                    <a href="#" data-toggle="modal" data-target="#cert4" class="preview">
+                        <div class="expenditure-card">
                         <div class="certificate" id="img4">
 
 
@@ -122,9 +126,11 @@
                             <a href="#" data-toggle="modal" data-target="#cert4" class="preview">Preview</a>
                         </div>
                     </div>
+                    </a>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 mt-5">
-                    <div class="expenditure-card">
+                    <a href="#" data-toggle="modal" data-target="#cert5" class="preview">
+                        <div class="expenditure-card">
                         <div class="certificate" id="img5">
 
 
@@ -133,6 +139,7 @@
                             <a href="#" data-toggle="modal" data-target="#cert5" class="preview">Preview</a>
                         </div>
                     </div>
+                    </a>
                 </div>
                 <!-- <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 mt-5">
                     <div class="expenditure-card">
