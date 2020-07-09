@@ -4,9 +4,14 @@
 
     <div class="container">
         <div class="row justify-content-center">
+
             <div class="col-md-8">
                 <div class="card">
                     <h2 class="card-header  bg-white text-center text-bold title">{{ __('HNGI CERTIFICATE MANAGER') }}</h2>
+
+                    @if(Session::has('message'))
+                        <p class="alert alert-success">{{ Session::get('message') }}</p>
+                    @endif
 
                     @if ($errors->any())
                         <div class="alert alert-danger">
