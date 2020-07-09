@@ -26,19 +26,20 @@ class PDFController extends Controller
         $data->start_date = $settings->start;
         $data->grad_date = $settings->start;
         $data->issued = $date;
+        $data->downloadable = 0;
 
         $certificate = ['certificate' => $data];
 
-        $response = Http::withToken(env('PDF_API','B6Oz9M9xQ1gvemLC0ZPVhDAO91TuTtxOaZK1PWB2'))->withOptions([
+        $response = Http::withToken(env('PDF_API', 'B6Oz9M9xQ1gvemLC0ZPVhDAO91TuTtxOaZK1PWB2'))->withOptions([
             'verify' => false,
         ])->post('https://docamatic.com/api/v1/pdf', [
-            'source' => URL::to('/certificates/'.$request->input('id')),
+            'source' => URL::to('/certificates/v/' . $request->input('id')),
             'format' => 'A4',
             'media' => 'screen',
             'landscape' => true
         ]);
 
-        if ($response->successful()){
+        if ($response->successful()) {
             $data = $response->json();
             $filename = $certificate['certificate']->version . time() . '.pdf';
             $temppdf = tempnam(sys_get_temp_dir(), $filename);
