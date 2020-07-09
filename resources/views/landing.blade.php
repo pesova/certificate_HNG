@@ -48,7 +48,7 @@
                                     <label for="hngi_id">HNGI-ID</label>
                                     <input type="text"
                                            class="form-control" name="hngi_id" id="hngi_id"
-                                           aria-describedby="hngi_id-help" placeholder="John" required>
+                                           aria-describedby="hngi_id-help" placeholder="12345" required>
                                     <small id="hngi_id-help" class="form-text text-muted">Help text</small>
                                 </div>
                                 <div class="col-md-6">

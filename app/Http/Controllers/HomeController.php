@@ -44,7 +44,7 @@ class HomeController extends Controller
         $request->validate([
             'first_name' => 'required|min:2',
             'last_name' => 'required|min:2',
-            'hngi_id' => 'required|min:5|max:5',
+            'hngi_id' => 'numeric|digits_between:5,5',
             'track' => 'required',
             'email' => 'required|email:rfc,dns',
         ]);
