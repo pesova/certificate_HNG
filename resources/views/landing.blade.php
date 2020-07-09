@@ -52,7 +52,7 @@
                                         <select class="form-control" name="track" id="" required>
                                             <option value="UI/UX Designer">Design</option>
                                             <option value="Frontend Developer">Front End</option>
-                                            <option value="Frontend Developer">Back End</option>
+                                            <option value="Backend Developer">Back End</option>
                                             <option value="Mobile Developer">Mobile</option>
                                         </select>
                                     </div>
@@ -99,7 +99,7 @@
                             <div class="row">
                                 <div class="form-group col-md-12">
                                     <div class="form-group">
-                                        <input type="checkbox" name="sendmail"> Send to my email
+                                        <input type="checkbox" name="sendmail" checked="checked"> Send to my email
                                     </div>
                                 </div>
                             </div>
