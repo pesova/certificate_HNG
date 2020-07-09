@@ -14,7 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'HomeController@index')->name('landing');
+Route::get('/landing', 'HomeController@index')->name('landing');
+Route::get('/', 'HomeController@welcome')->name('welcome');
 Route::post('/', 'HomeController@generate')->name('generate');
 Auth::routes(['register' => false]);
 

@@ -27,9 +27,15 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
+    public function index(Request $req)
     {
+        $req->session()->flash('message', 'Choose certificate type ' . $req->input('type') . ' on the form');
         return view('landing');
+    }
+
+    public function welcome()
+    {
+        return view('welcome');
     }
 
     public function generate(Request $request)
