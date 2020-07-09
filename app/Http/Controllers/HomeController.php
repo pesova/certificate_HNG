@@ -30,7 +30,7 @@ class HomeController extends Controller
     public function index(Request $req)
     {
         $req->session()->flash('message', 'Choose certificate type ' . $req->input('type') . ' on the form');
-        return view('landing');
+        return view('landing')->with('type', $req->input('type'));
     }
 
     public function welcome()
