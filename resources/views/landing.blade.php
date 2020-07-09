@@ -78,7 +78,7 @@
                                     <div class="form-group">
                                         <label for="version">Certificate Type</label>
                                         <select class="form-control" name="version" id="version" required>
-                                            <option value="{{$type}}" selected disabled hidden>type {{$type}}</option>
+                                            <option value="{{$type}}" selected>type {{$type}}</option>
                                             <option value="1">type 1</option>
                                             <option value="2">type 2</option>
                                             <option value="3">type 3</option>
