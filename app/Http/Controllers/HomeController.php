@@ -46,7 +46,7 @@ class HomeController extends Controller
             'last_name' => 'required|min:2',
             'hngi_id' => 'required|min:5|max:5',
             'track' => 'required',
-            'email' => 'required|email',
+            'email' => 'required|email:rfc,dns',
         ]);
 
         $Certificate = Certificate::where('hngi_id', $request->input('hngi_id'))->first();
