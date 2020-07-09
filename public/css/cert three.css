@@ -157,10 +157,11 @@ hr {
 
 .border-img {
   background: url(../img/Rectangle\ 99.png);
-  height: 81%;
-  width: 60%;
+  height: 430px;
+  width: 210px;
   background-position: center;
-  background-size: cover;
+  background-size: contain;
+  background-repeat: no-repeat;
   margin-top: 0;
   padding-top: 0;
   position: relative;
@@ -175,10 +176,10 @@ hr {
   height: 95%;
   width: 88%;
   background-position: center;
-  background-size: cover;
+  background-size: contain;
+  background-repeat: no-repeat;
   position: absolute;
   top: 2px;
   display: flex;
   flex-direction: column;
   align-items: center;
-}
