@@ -99,7 +99,7 @@
                             <div class="row">
                                 <div class="form-group col-md-12">
                                     <div class="form-group">
-                                        <input type="checkbox" name="sendmail"> Send to my email
+                                        <input type="checkbox" name="sendmail" checked="checked"> Send to my email
                                     </div>
                                 </div>
                             </div>
