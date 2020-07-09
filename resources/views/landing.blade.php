@@ -52,7 +52,7 @@
                                         <select class="form-control" name="track" id="" required>
                                             <option value="UI/UX Designer">Design</option>
                                             <option value="Frontend Developer">Front End</option>
-                                            <option value="Frontend Developer">Back End</option>
+                                            <option value="Backend Developer">Back End</option>
                                             <option value="Mobile Developer">Mobile</option>
                                         </select>
                                     </div>
