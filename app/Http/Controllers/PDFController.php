@@ -27,6 +27,7 @@ class PDFController extends Controller
         $data->grad_date = $settings->start;
         $data->issued = $date;
         $data->downloadable = 0;
+        $name = $data->first_name . $data->lastname_name . $data->hngi_id . '.pdf';
 
         $certificate = ['certificate' => $data];
 
@@ -36,17 +37,20 @@ class PDFController extends Controller
             'source' => URL::to('/certificates/v/' . $request->input('id')),
             'format' => 'A4',
             'media' => 'screen',
-            'landscape' => true
+            'landscape' => true,
+            'test'      => true,
+            'zoom'      => 0,
+            'page_ranges' => '1',
         ]);
 
         if ($response->successful()) {
             $data = $response->json();
-            $filename = $certificate['certificate']->version . time() . '.pdf';
+            $filename = $name;
             $temppdf = tempnam(sys_get_temp_dir(), $filename);
             copy($data['document'], $temppdf);
             return response()->download($temppdf, $filename);
         }
         $pdf = PDF::loadView('certificates.v' . $certificate['certificate']->version, $certificate)->setPaper('a4', 'landscape');
-        return $pdf->download('v1.pdf');
+        return $pdf->download($name.'.pdf');
     }
 }
