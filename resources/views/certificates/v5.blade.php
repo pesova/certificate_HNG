@@ -18,9 +18,7 @@
         <div class="bg-img"><img src="/img/Vector.png"></div>
     </div>
     <div class="certificate">
-        <p>
-            <small> Issued on the 16th of September 2020</small>
-        </p>
+        <p><small> Issued on <span class="my-date">the 16th of September 2020</span></small></p>
         <div class="user-info">
             <h2>Certificate Of Completion</h2>
             <p>Awarded to</p>
@@ -28,6 +26,9 @@
             <p>For completing HNG i7 as a</p>
             <h2>{{$certificate->track}}</h2>
             <p class="date">The internship lasted from 18th July through to 20th September 2020</p>
+            <small>
+                Verify at <a href="{{ url('certificates/' . $certificate->hngi_id) }}">{{ url('certificates/' . $certificate->hngi_id) }}</a>
+            </small>
         </div>
 
         <div class="signature">
@@ -45,5 +46,11 @@
         <button class="btn btn-success">Download</button>
     </form>
 @endif
+
+<script>
+  let today = new Date()
+  date = today.toDateString()
+  document.querySelector('.my-date').textContent = date;
+</script>
 </body>
 </html>

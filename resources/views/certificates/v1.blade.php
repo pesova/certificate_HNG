@@ -1,64 +1,61 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="Description" content="Enter your description here"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
-    {{--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">--}}
-    <link rel="stylesheet" href="/css/cert two.css">
-    <title>Certificate Two</title>
 
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Google fonts CDN -->
+    <link href="https://fonts.googleapis.com/css2?family=Homemade+Apple&family=Lovers+Quarrel&family=Poppins:wght@500&family=Roboto:wght@500&display=swap"
+          rel="stylesheet">
+
+    <!-- custom css -->
+    <link rel="stylesheet" href="/css/cert one.css">
+
+
+    <title>Certificate 3</title>
 </head>
 <body>
-<div class="container-fluid">
-    <!-- <div class="row"> -->
-    <div class="cert-box">
-        <div class="top-image">
-            <img src="/img/Vector 2.png" class="img-fluid" alt="">
-        </div>
-        <div class="text-box">
-            <div class="cert-complete">
-                <h2>Certification of Completion</h2>
+<!-- main content -->
+<div id="main">
+    <div class="certificate-container">
+        <div class="space"></div>
+        <div class="certificate-content">
+            <div class="first">
+                <img src="/img/HNG-Logo-web.svg" alt="HNG Logo">
+                <h5>issued on <span class="my-date">the 16th of September 2020</span></h5>
             </div>
-            <div class="awarded">
-                <p>Awarded To</p>
+
+            <div class="second">
+                <h1>Certificate of Completion</h1>
+                <h3 class="presented">This certificate is presented to</h3>
+                <h2 class="name">{{$certificate->first_name}} {{$certificate->last_name}}</h2>
+                <h4 class="accomplishment-text">For the successfully completing HNGi7 as a</h4>
+                <h2 class="stack">{{$certificate->track}}</h2>
             </div>
-            <div class="name">
-                <p>{{$certificate->first_name}} {{$certificate->last_name}}</p>
-            </div>
-            <div class="completed">
-                <p>For Completing HNGI7 As A</p>
-            </div>
-            <div class="row bottom">
-                <div class="col-lg-8">
-                    <div class="track">
-                        <h2>{{$certificate->track}}</h2>
-                    </div>
-                    <div class="remarks">
-                        <p>
-                            he has proven to be deligent, resourceful and a <br> team player other accomplishements he
-                            made on <br> the internship
-                        </p>
+
+            <div class="third">
+                <div class="creditations">
+                    <h6>
+                        Verify at <a href="{{ url('certificates/' . $certificate->hngi_id) }}">{{ url('certificates/' . $certificate->hngi_id) }}</a>
+                    </h6>
+                    <div>
+                        <p>Hotels.ng Internship has verified that this individual has completed</p>
+                        <p>to a degree the 8th Edition of the HNG Internship</p>
                     </div>
                 </div>
-                <div class="col-lg-4">
-                    <div class="signature-box">
-                        <div class="signed">
-                            <p>Seyi Onifade</p>
-                            <div class="line"></div>
-                            <div class="signed-position">
-                                <p>CEO, HNG internship</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="bottom-img">
-                    <img src="/img/Vector 3.png" alt="">
+
+                <div class="signature">
+                    <h4 class="ceo-name">Seyi Onifade</h4>
+
+                    <p>CEO, HNG internship</p>
                 </div>
             </div>
         </div>
+        <div class="space"></div>
     </div>
     @if($certificate->downloadable == 1)
         <form action="/generate-pdf" method="post">
@@ -66,12 +63,13 @@
             <input type="hidden" name="id" value="{{$certificate->hngi_id}}">
             <button class="btn btn-success">Download</button>
         </form>
-@endif
-<!-- </div> -->
+    @endif
 </div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
 
+<script>
+  let today = new Date()
+  date = today.toDateString()
+  document.querySelector('.my-date').textContent = date;
+</script>
 </body>
 </html>

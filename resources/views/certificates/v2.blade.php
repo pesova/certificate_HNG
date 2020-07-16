@@ -1,57 +1,67 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Certificate</title>
-    <link href="https://fonts.googleapis.com/css2?family=Lovers+Quarrel&family=Roboto:ital,wght@0,400;0,700;0,900;1,500&display=swap"
-          rel="stylesheet">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="Description" content="Enter your description here"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+    {{--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">--}}
+    <link rel="stylesheet" href="/css/cert two.css">
+    <title>Certificate Two</title>
 
-    <link rel="stylesheet" href="/css/cert%20one.css">
 </head>
 <body>
-<div class="container">
-    <div class="certificate">
-        <div class="bg bg1"><img src="/img/Vector-3.png" alt="" srcset=""></div>
-        <div class="bg bg2"><img src="/img/Vector-6.png" alt="" srcset=""></div>
-        <div class="bg bg3"><img src="/img/Vector-4.png" alt="" srcset=""></div>
-        <div class="bg bg4"><img src="/img/Vector-5.png" alt="" srcset=""></div>
-
-        <div class="header">
-            <img class="side-img" src="/img/image-1.png">
-            <span class="side-text">HNG Internship</span>
-            <p>
-                <small> Issued on the 16th of September 2020</small>
-            </p>
+<div class="container-fluid">
+    <!-- <div class="row"> -->
+    <div class="cert-box">
+        <div class="top-image">
+            <img src="/img/Vector 2.png" class="img-fluid" alt="">
         </div>
-
-        <div class="user-info">
-            <div class="certified">
-                <h2>Certificate Of Completion</h2>
-                <p> This certificate is presented to</p>
+        <div class="text-box">
+            <div class="cert-complete">
+                <h2>Certification of Completion</h2>
             </div>
-
-            <h1>{{$certificate->first_name}} {{$certificate->last_name}}</h1>
-            <hr class="name-line">
-            <p class="purpose">For the successfully completing HNGi7 as a</p>
-            <h2>{{$certificate->track}}</h2>
+            <div class="awarded">
+                <p>Awarded To</p>
+            </div>
+            <div class="name">
+                <p>{{$certificate->first_name}} {{$certificate->last_name}}</p>
+            </div>
+            <div class="completed">
+                <p>For Completing HNGI7 As A</p>
+            </div>
+            <div class="row bottom">
+                <div class="col-lg-8">
+                    <div class="track">
+                        <h2>{{$certificate->track}}</h2>
+                    </div>
+                    <div class="remarks">
+                        <p>
+                            he has proven to be deligent, resourceful and a <br> team player other accomplishements he
+                            made on <br> the internship
+                            <small>
+                                Verify at <a href="{{ url('certificates/' . $certificate->hngi_id) }}">{{ url('certificates/' . $certificate->hngi_id) }}</a>
+                            </small>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="signature-box">
+                        <div class="signed">
+                            <p>Seyi Onifade</p>
+                            <div class="line"></div>
+                            <div class="signed-position">
+                                <p>CEO, HNG internship</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bottom-img">
+                    <img src="/img/Vector 3.png" alt="">
+                </div>
+            </div>
         </div>
-
-        <div class="footer">
-            <div class="verify">
-                <p>Verfiy at <a href="">hng.com/certificates/xGhniJH</a></p>
-                <small>Hotels.ng Internship has verified that this individual has completed to a degree the 8th Edition
-                    of the HNG Internship
-                </small>
-            </div>
-            <div class="signature">
-                <p class="sign-name">Seyi Onifade</p>
-                <hr class="line">
-                <small>CEO HNG Internship</small>
-            </div>
-        </div>
-
-        <div class="bg-img2"><img src="/img/Vector-2.png" alt="" srcset=""></div>
     </div>
     @if($certificate->downloadable == 1)
         <form action="/generate-pdf" method="post">
@@ -59,7 +69,12 @@
             <input type="hidden" name="id" value="{{$certificate->hngi_id}}">
             <button class="btn btn-success">Download</button>
         </form>
-    @endif
+@endif
+<!-- </div> -->
 </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
 </body>
 </html>

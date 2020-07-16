@@ -1,4 +1,5 @@
 /* general styles and text */
+@import url('https://fonts.googleapis.com/css2?family=Homemade+Apple&display=swap');
 
 body{
   background-color: #E5E5E5;
@@ -37,6 +38,8 @@ p{
 .fourth{
   width: 50%;
   text-align: center;
+  position: relative;
+  top: -10px;
 }
 
 .creditations div p {
@@ -89,12 +92,28 @@ p{
   justify-content: left;
 }
 
+.sign {
+  display: flex;
+  flex-direction: column;
+}
+
+.sign p {
+  width: 50%;
+  text-align: center;
+  margin-top: 20%;
+  margin-bottom: 0em;
+  position: relative;
+  bottom: -10px;
+  font-size: 15px;
+  font-family: 'Homemade Apple', cursive;
+}
+
 hr {
   border: 0;
   clear:both;
   display:block;
   width: 50%;
-  margin-top: 20%;
+  padding: 0;
   margin-left: 0;               
   border-top: 1px dashed #4F4F4F;
   height: 1px;
@@ -157,10 +176,11 @@ hr {
 
 .border-img {
   background: url(../img/Rectangle\ 99.png);
-  height: 81%;
-  width: 60%;
+  height: 430px;
+  width: 210px;
   background-position: center;
-  background-size: cover;
+  background-size: contain;
+  background-repeat: no-repeat;
   margin-top: 0;
   padding-top: 0;
   position: relative;
@@ -175,7 +195,8 @@ hr {
   height: 95%;
   width: 88%;
   background-position: center;
-  background-size: cover;
+  background-size: contain;
+  background-repeat: no-repeat;
   position: absolute;
   top: 2px;
   display: flex;

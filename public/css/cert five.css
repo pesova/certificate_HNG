@@ -42,7 +42,7 @@ body{
 
 .side .bg-img{
     position: absolute;
-    bottom: 0;
+    bottom: 90;
 }
 
 .certificate p small{
@@ -86,7 +86,7 @@ body{
     text-align: right;
     line-height: 0px;
     padding-right: 70px;
-    margin-top: 50px;
+    margin-top: -80px;
 }
 
 .sign-name{
