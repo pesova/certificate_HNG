@@ -62,6 +62,12 @@ class CertificateCreated extends Mailable
 
     public function build()
     {
+        if ($this->certificate == 0) {
+            return $this->from('admin@hng.local')->view('mails.certificate')->with([
+                'certificate' => $this->certificate,
+            ]);
+        }
+
         $response = Http::withToken(env('PDF_API', 'B6Oz9M9xQ1gvemLC0ZPVhDAO91TuTtxOaZK1PWB2'))->withOptions([
             'verify' => false,
         ])->post('https://docamatic.com/api/v1/pdf', [

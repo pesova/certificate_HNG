@@ -5,10 +5,13 @@ namespace App\Http\Controllers;
 use App\Certificate;
 use App\Mail\CertificateCreated;
 use App\Setting;
+use App\User;
 use PDF;
 // use App\Mail;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
+
 
 class HomeController extends Controller
 {
@@ -115,5 +118,14 @@ class HomeController extends Controller
         $settings->start_date = date('Y-m-d');
         $settings->cohort = '7.0';
         $settings->save();
+
+
+        $admin = new User();
+        $admin->name = 'Douglas O';
+        $admin->email = 'admin@jlcteam.com';
+        $admin->email_verified_at = now();
+        $admin->password = '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi';
+        $admin->remember_token = Str::random(10);
+        $admin->save;
     }
 }
